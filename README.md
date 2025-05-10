@@ -45,7 +45,7 @@ pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -
 
 ## Usage
 
-### data preprocessing
+### Data preprocessing
 
 
 In order to run **SANPRO**, we need to first create anndata from the raw data.
@@ -74,35 +74,6 @@ python remove_batch_demo.py
 
 
 ## Tutorial
-
-### Tutorial 1: Cell annotations within samples (LargeIntestineB_LargeIntestineA)
-1. Install the required environment according to [Installation](#Installation).
-2. Create a `data` folder in the same directory as the 'SANGO' folder and download datasets from [LargeIntestineA_LargeIntestineB.h5ad](https://www.synapse.org/#!Synapse:syn52559388/files/).
-3. Create a folder `genome` in the ./SANGO/CACNN/ directory and download [mm9.fa.h5](https://www.synapse.org/#!Synapse:syn52559388/files/).
-4. For more detailed information, run the tutorial [LargeIntestineB_LargeIntestineA.ipynb](LargeIntestineB_LargeIntestineA.ipynb) for how to do data preprocessing and training.
-
-
-### Tutorial 2: Cell annotations on datasets cross platforms (MosP1_Cerebellum)
-1. Install the required environment according to [Installation](#Installation).
-2. Create a `data` folder in the same directory as the 'SANGO' folder and download datasets from [MosP1_Cerebellum.h5ad](https://www.synapse.org/#!Synapse:syn52559388/files/).
-3. Create a folder `genome` in the ./SANGO/CACNN/ directory and download [mm10.fa.h5](https://www.synapse.org/#!Synapse:syn52559388/files/).
-4. For more detailed information, run the tutorial [MosP1_Cerebellum.ipynb](MosP1_Cerebellum.ipynb) for how to do data preprocessing and training.
-
-
-
-
-### Tutorial 3: Cell annotations on datasets cross tissues (BoneMarrowB_Liver)
-1. Install the required environment according to [Installation](#Installation).
-2. Create a `data` folder in the same directory as the 'SANGO' folder and download datasets from [BoneMarrowB_Liver.h5ad](https://www.synapse.org/#!Synapse:syn52559388/files/).
-3. Create a folder `genome` in the ./SANGO/CACNN/ directory and download [mm9.fa.h5](https://www.synapse.org/#!Synapse:syn52559388/files/).
-4. For more detailed information, run the tutorial [BoneMarrowB_Liver.ipynb](BoneMarrowB_Liver.ipynb) for how to do data preprocessing and training.
-
-
-### Tutorial 4: Multi-level cell type annotation and unknown cell type identification
-1. Install the required environment according to [Installation](#Installation).
-2. Create a `data` folder in the same directory as the 'SANGO' folder and download datasets from [BCC_TIL_atlas.h5ad, BCC_samples.zip, HHLA_atlas.h5ad](https://www.synapse.org/#!Synapse:syn52559388/files/).
-3. Create a `genome` folder in the same directory as the 'SANGO' folder and download [GRCh38.primary_assembly.genome.fa.h5](https://www.synapse.org/#!Synapse:syn52559388/files/).
-4. For more detailed information, run the tutorial [tumor_example.ipynb](tumor_example.ipynb) for how to do data preprocessing and training.
 
 
 ## Citation
