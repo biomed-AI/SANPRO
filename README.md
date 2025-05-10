@@ -1,9 +1,9 @@
 ![](figures/model.png)
 
-<font size=4> We propose a novel method, SANPRO, for accurate single cell annotation by integrating genome sequences around the accessibility peaks within scATAC data.  </font> <br><br>
+<font size=4> We propose a novel method, SANPRO, for.  </font> <br><br>
 
 
-# SANGO
+# SANPRO
 
 The official implementation for "**SANPRO**".
 
@@ -23,11 +23,11 @@ We provide an easy access to the used datasets in the [synapse](https://www.syna
 
 ## Installation
 
-To reproduce **SANGO**, we suggest first create a conda environment by:
+To reproduce **SANPRO**, we suggest first create a conda environment by:
 
 ~~~shell
-conda create -n SANGO python=3.8
-conda activate SANGO
+conda create -n SANPRO python=3.8
+conda activate SANPRO
 ~~~
 
 and then run the following code to install the required package:
@@ -48,49 +48,29 @@ pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -
 ### data preprocessing
 
 
-In order to run **SANGO**, we need to first create anndata from the raw data.
+In order to run **SANPRO**, we need to first create anndata from the raw data.
 
 The h5ad file should have cells as obs and peaks as var. There should be at least three columns in `var`:  `chr`, `start`, `end` that indicate the genomic region of each peak. The h5ad file should also contain two columns in the `obs`: `Batch` and `CellType` （reference data）, where `Batch` is used to distinguish between reference and query data, and `CellType` indicates the true label of the cell.
 
-Notice that we filter out peaks accessible in < 1% cells for optimal performance.
 
 ### Stage 1: embeddings extraction
 
-The processed data are used as input to CACNN and a reference genome is provided to extract the embedding incorporating sequence information: 
+The processed data are used as input to *scbasset* and a reference genome is provided to extract the embedding incorporating sequence information: 
 
 ~~~shell
 # Stage 1: embeddings extraction
-cd SANGO/CACNN
 
-python main.py -i ../../preprocessed_data/reference_query_example.h5ad \ # input data(after data preprocessing)
-               -g mm9 \ # reference genome
-               -o ../../output/reference_query_example # output path
+python train_demo.py
 ~~~
 
-Running the above command will generate three output files in the output path:
 
-* `CACNN_train.log`: recording logs during training
-* `CACNN_best_model.pt`: storing the model weights with the best AUC score during training
-* `CACNN_output.h5ad`: an anndata file storing the embedding extracted by CACNN.
-
-### Stage 2: cell type prediction
+### Stage 2: batch effect removal
 
 ~~~shell
-# Stage 2: cell type prediction
-cd ../GraphTransformer
+# Stage 2: batch effect removal
 
-python main.py  --data_dir ../../output/reference_query_example/CACNN_output.h5ad \ # input data
-                --train_name_list reference --test_name query \
-                --save_path ../../output \
-                --save_name reference_query_example
+python remove_batch_demo.py 
 ~~~
-
-Running the above command will generate three output files in the output path:
-
-* `model.pkl`: storing the model weights with the best valid loss during training.
-* `embedding.h5ad`: an anndata file storing the embedding extracted by GraphTransformer.  And `.obs['Pred']` saves the results of the prediction.
-
-
 
 
 ## Tutorial
@@ -100,8 +80,6 @@ Running the above command will generate three output files in the output path:
 2. Create a `data` folder in the same directory as the 'SANGO' folder and download datasets from [LargeIntestineA_LargeIntestineB.h5ad](https://www.synapse.org/#!Synapse:syn52559388/files/).
 3. Create a folder `genome` in the ./SANGO/CACNN/ directory and download [mm9.fa.h5](https://www.synapse.org/#!Synapse:syn52559388/files/).
 4. For more detailed information, run the tutorial [LargeIntestineB_LargeIntestineA.ipynb](LargeIntestineB_LargeIntestineA.ipynb) for how to do data preprocessing and training.
-
-
 
 
 ### Tutorial 2: Cell annotations on datasets cross platforms (MosP1_Cerebellum)
@@ -133,11 +111,4 @@ If you find our codes useful, please consider citing our work:
 
 ~~~bibtex
 
-
-@article{zengSANGO,
-  title={Deciphering Cell Types by Integrating scATAC-seq Data with Genome Sequences},
-  author={Yuansong Zeng, Mai Luo, Ningyuan Shangguan, Peiyu Shi, Junxi Feng, Jin Xu, Weijiang Yu, and Yuedong Yang},
-  journal={},
-  year={2023},
-}
 ~~~
