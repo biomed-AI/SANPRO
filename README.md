@@ -18,7 +18,7 @@ The official implementation for "**SANPRO**".
 ## Datasets
 
 
-We provide an easy access to the used datasets in the [synapse](https://www.synapse.org/#!Synapse:syn52559388/files/).
+We provide an easy access to the used datasets in the .
 
 
 ## Installation
