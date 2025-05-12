@@ -12,8 +12,6 @@ The official implementation for "**SANPRO**".
 * [Datasets](#Datasets)
 * [Installation](#Installation)
 * [Usage](#Usage)
-* [Tutorial](#Tutorial)
-* [Citation](#Citation)
 
 ## Datasets
 
