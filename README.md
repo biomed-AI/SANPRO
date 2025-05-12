@@ -1,6 +1,6 @@
-![](figures/model.png)
+![](model.jpg)
 
-<font size=4> We propose a novel method, SANPRO, for.  </font> <br><br>
+<font size=4> We propose a novel method SANPRO
 
 
 # SANPRO
@@ -18,7 +18,7 @@ The official implementation for "**SANPRO**".
 ## Datasets
 
 
-We provide an easy access to the used datasets in the .
+We provide some data demos in the fold named "data_demo". The complete dataset can be downloaded via the download link provided in the paper.
 
 
 ## Installation
@@ -72,14 +72,3 @@ python train_demo.py
 python remove_batch_demo.py 
 ~~~
 
-
-## Tutorial
-
-
-## Citation
-
-If you find our codes useful, please consider citing our work:
-
-~~~bibtex
-
-~~~
