@@ -1,6 +1,6 @@
 ![](model.jpg)
 
-<font size=4> We propose a novel method SANPRO
+<font size=4> We present SANPRO, a novel method for the analysis of single-cell and spatial proteomics data.
 
 
 # SANPRO
@@ -72,7 +72,7 @@ If you find our codes useful, please consider citing our work:
 
 
 @article{zengSANPRO,
-  title={SANPRO: a deep sequence-aware framework for decoding single-cell and spatial proteomic data},
+  title={SANPRO: A Cross-scale Framework for Integrating mRNA Sequences and Protein Abundance in Decoding Single-cell and Spatial Proteomics},
   author={Yuansong Zeng, Jianing Chen, Wenbing Li, Hongcheng Chen, Hongyu Zhang, Huiying Zhao, Zheng Wang, Yuedong Yang},
   journal={},
   year={2025},
