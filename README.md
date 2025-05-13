@@ -12,6 +12,7 @@ The official implementation for "**SANPRO**".
 * [Datasets](#Datasets)
 * [Installation](#Installation)
 * [Usage](#Usage)
+* [Citation](#Citation)
 
 ## Datasets
 
@@ -70,3 +71,17 @@ python train_demo.py
 python remove_batch_demo.py 
 ~~~
 
+## Citation
+
+If you find our codes useful, please consider citing our work:
+
+~~~bibtex
+
+
+@article{zengSANPRO,
+  title={SANPRO: a deep sequence-aware framework for decoding single-cell and spatial proteomic data},
+  author={Yuansong Zeng, Jianing Chen, Wenbing Li, Hongcheng Chen, Hongyu Zhang, Huiying Zhao, Zheng Wang, Yuedong Yang},
+  journal={},
+  year={2025},
+}
+~~~
